@@ -60,7 +60,7 @@ DNMP项目特点：
 1. 本地安装`git`、`docker`和`docker-compose`。
 2. `clone`项目：
     ```
-    $ git clone https://github.com/yeszao/dnmp.git
+    $ git clone https://github.com/fengzyz/dnmp.git
     ```
 3. 如果不是`root`用户，还需将当前用户加入`docker`用户组：
     ```
@@ -82,7 +82,7 @@ DNMP项目特点：
 
 要修改端口、日志文件位置、以及是否替换source.list文件等，请修改.env文件，然后重新构建：
 ```bash
-$ docker-compose build php54    # 重建单个服务
+$ docker-compose build php56    # 重建单个服务
 $ docker-compose build          # 重建全部服务
 
 ```
@@ -95,7 +95,7 @@ $ docker-compose build          # 重建全部服务
 
 例如，示例的 [http://localhost](http://localhost) 用的是PHP5.4，Nginx 配置：
 ```
-    fastcgi_pass   php54:9000;
+    fastcgi_pass   php56:9000;
 ```
 要改用PHP7.2，修改为：
 ```
@@ -114,7 +114,6 @@ $ docker exec -it dnmp_nginx_1 nginx -s reload
 alias dnginx='docker exec -it dnmp_nginx_1 /bin/sh'
 alias dphp72='docker exec -it dnmp_php72_1 /bin/bash'
 alias dphp56='docker exec -it dnmp_php56_1 /bin/bash'
-alias dphp54='docker exec -it dnmp_php54_1 /bin/bash'
 alias dmysql='docker exec -it dnmp_mysql_1 /bin/bash'
 alias dredis='docker exec -it dnmp_redis_1 /bin/sh'
 ```
@@ -249,8 +248,6 @@ Redis连接信息如下：
 
 ## 9.常见问题
 ### 9.1 如何在PHP代码中使用curl？
-参考这个issue：[https://github.com/yeszao/dnmp/issues/91](https://github.com/yeszao/dnmp/issues/91)
-
 ## License
 MIT
 
